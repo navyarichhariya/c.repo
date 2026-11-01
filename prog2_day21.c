@@ -1,0 +1,45 @@
+/*Q42: Write a program to check if a number is a perfect number.
+
+Sample Test Cases:
+Input 1:
+6
+Output 1:
+Perfect number
+
+Input 2:
+10
+Output 2:
+Not perfect number
+
+*/
+
+
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+   
+    for (int i = 1; i <= num / 2; i++) {
+        if (num % i == 0) {
+            sum += i; // Add the divisor to the sum
+        }
+    }
+
+    if (sum == num && num > 0) {
+        printf("%d is a perfect number.\n", num);
+    } else {
+        printf("%d is NOT a perfect number.\n", num);
+    }
+
+    return 0;
+}
+
+
+/*
+Enter a positive integer: 880
+880 is NOT a perfect number.
+*/
